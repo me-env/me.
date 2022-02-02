@@ -1,0 +1,67 @@
+{
+  "$jsonSchema": {
+    "bsonType": "object",
+    "required": [
+      "transaction_id",
+      "transaction_name",
+      "account_id",
+      "account_name",
+      "amount",
+      "type",
+      "tx_date",
+      "timestamp",
+      "refunded",
+      "refunded_double_checked",
+      "payment"
+    ],
+    "properties": {
+      "transaction_id": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "transaction_name": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "account_id": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "account_name": {
+        "bsonType": "string",
+        "description": "must be a string and is required"
+      },
+      "amount": {
+        "bsonType": "double",
+        "description": "must be an integer and is required"
+      },
+      "type": {
+        "bsonType": [
+          "array",
+          "string"
+        ],
+        "description": "must be an array or a string and is required"
+      },
+      "tx_date": {
+        "bsonType": "date",
+        "description": "must be a date and is required. Date of the transaction"
+      },
+      "timestamp": {
+        "bsonType": "date",
+        "description": "must be a date and is required. Date on which the transaction is added to the database."
+      },
+      "refunded": {
+        "bsonType": ["bool", "null"],
+        "description": "must be bool or null and is required."
+      },
+      "refunded_double_checked": {
+        "bsonType": "bool",
+        "description": "must be a bool and is required."
+      },
+      "payment": {
+        "bsonType": "bool",
+        "description": "must be a bool and is required. Whether the transaction is a payment or not (if false, then it is an income)."
+      }
+    }
+  }
+}
