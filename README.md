@@ -1,15 +1,15 @@
 # me.
 
-me. purpose is to store your data where ever you want and to let whoever you want access it. We have full control over it.
+me. purpose is to let you choose where and how you store your data as well as who access it. We have full control over it.
 
-Want to store it in a NAS and have redundancy in aws ? possible. <br>
-Want to store passwords at home and navigation data in GCP ? possible. <br>
-Want x_society to access x_data because you trust them and wanna help them buiding models by letting them access part of your data ? possible. <br>
-Want to have detailed insights about how you do shopping based on your transaction data ? Well if nobody coded it yet you can do it by yourself and sell it.
+- Want to store it in a NAS and have redundancy in aws ? possible.
+- Want to store passwords at home NAS and navigation data in GCP ? possible.
+- Want x_society to access y_data because you trust them and want to help them buiding models by letting them access part of your data ? possible.
+- Want to have detailed insights about how you do shopping based on your transaction data ? Well if nobody coded it yet you can do it by yourself and sell it.
 
 
 The idea is that anyone can add modules to get more data from different sources, and anyone can add modules that are services allowing anyone to use them with their data. <br>
-Of course modules have to be validated by a trust entity (can be a group of people working on the opensource project) because we need to verify that the data from me. is being used to run the module whatever it is and not to export data for further usage.
+Of course modules (if not open source because you are selling them) have to be validated by a trust entity (can be a group of people working on the opensource project) because we need to verify that the data from 'me.' is not exported elsewhere.
 
 ### Modules examples
 
@@ -33,7 +33,7 @@ Data can be at one place or at multiple places (NAS at home, cloud, friend's hom
 You choose where is what data.
 
 So the previous explanation is the dream result.
-Current state is only Tink data that you store in mongodb, and you have to install it by yourself, no "one click setup".
+Current state is only Tink data that you store in mongodb, and you have to install it by yourself, no "one click setup" yet.
 
 
 ## Installation instructions Windows 11 (but should work on 10)
@@ -79,6 +79,7 @@ Mongodb databases configuration files have to contain all possible fields in the
 Sso this is my own configuration, please adapt it with your paths
 
 ````yaml
+# Apache Spark :
 HADOOP_HOME: D:\Program Files\Hadoop\winutils\hadoop-3.2.2
 JAVA_HOME: D:\Program Files\Java\jre1.8.0_202
 SPARK_HOME: D:\Program Files\Spark\spark-3.2.0-bin-hadoop3.2
@@ -86,14 +87,14 @@ PYSPARK_PYTHON: C:\Users\cypri\anaconda3\python.exe
 PYTHONPATH: %SPARK_HOME%\python;%SPARK_HOME%\python\lib\py4j-0.10.9.2-src.zip;%PYTHONPATH%
 SCALA_HOME: C:\Program Files (x86)\sbt\bin
 
+# MOGODB
+MONGO_USER: cyprien
+MONGO_PWD: pwd
+
 # For Tink : 
 CLIENT_ID: c5db78c20d154d5a979648f12ac7182b
 CLIENT_SECRET: client_secret
 EXTERNAL_USER_ID: cyprien_ricque
-
-# For mongodb
-MONGO_USER: cyprien
-MONGO_PWD: pwd
 ````
 
 ### history
@@ -102,7 +103,6 @@ Run history server on windows
 ````powershell
 D:\'Program Files'\Spark\spark-3.2.0-bin-hadoop3.2\bin\spark-class.cmd org.apache.spark.deploy.history.HistoryServer
 ````
-
 
 # Module - Tink 
 *get transactions from bank*
