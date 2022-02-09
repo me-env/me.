@@ -1,7 +1,34 @@
-from src.logger import MeLogger, DEBUG, DEFAULT
-import logging
+from me.logger import MeLogger, DEBUG, DEFAULT
+from me.plugins.banks_manager.bank_account import BankAccountTink
+from me.IDataSource import IDataSource
 
-from src.datasource.banks_manager.bank_account import BankAccountTink
+
+class PluginTink(IDataSource):
+    def __init__(self):
+        self._banks_manager = BanksManager
+
+    def getData(self):
+        """
+        """
+        # self._banks_manager.getAllTransactions()
+
+    def getSchema(self):
+        """
+        Get schema to know how to store the data in me.
+        """
+        raise NotImplementedError
+
+    def getAccessAuth(self):
+        """
+        Get information about who can access data
+        """
+        raise NotImplementedError
+
+    def getStorageDetails(self):
+        """
+        Get information about how to store data, such as the type of database needed and where to store it
+        """
+        raise NotImplementedError
 
 
 class BanksManager:

@@ -1,5 +1,5 @@
-from src.logger import MeLogger, DEFAULT, DEBUG
-from src.datasource.banks_manager.bank_account.parser import TinkParser
+from me.logger import MeLogger, DEFAULT, DEBUG
+from me.plugins.banks_manager.bank_account.parser import TinkParser
 import logging
 import requests
 import json

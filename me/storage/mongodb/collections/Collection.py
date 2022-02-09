@@ -1,6 +1,6 @@
-from src.storage.mongodb.config import BULK_LIMIT, BULK_MIN
-from src.storage.mongodb.config import mongo_to_python
-from src.tools import fread_json
+from me.storage.mongodb.config import BULK_LIMIT, BULK_MIN
+from me.storage.mongodb.config import mongo_to_python
+from me.tools import fread_json
 
 
 class Collection:

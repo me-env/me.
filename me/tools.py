@@ -1,6 +1,6 @@
 import os
 import json
-from src.logger import info
+from me.logger import info
 
 # PARSING
 import time

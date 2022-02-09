@@ -1,6 +1,6 @@
-from src.storage.mongodb.MongodbManager import MongodbManager
-from src.storage.datalist import Data
-from src.logger import MeLogger, DEBUG
+from me.storage.mongodb.MongodbManager import MongodbManager
+from me.storage.datalist import Data
+from me.logger import MeLogger, DEBUG
 
 
 class StorageManager:

@@ -1,7 +1,7 @@
 from .Collection import Collection
-from src.storage.datalist import Data
+from me.storage.datalist import Data
 from datetime import datetime
-from src.logger import MeLogger, DEBUG
+from me.logger import MeLogger, DEBUG
 
 
 class Transaction(Collection):

@@ -1,7 +1,7 @@
-from src.datasource.banks_manager import BanksManager
-from src.storage import StorageManager
-from src.storage.datalist import Data
-from src.logger import MeLogger, DEBUG, DEFAULT
+from me.plugins.banks_manager import BanksManager
+from me.storage import StorageManager
+from me.storage.datalist import Data
+from me.logger import MeLogger, DEBUG, DEFAULT
 
 
 class Me:
@@ -9,6 +9,7 @@ class Me:
         self.log = MeLogger(name=__name__, level=DEFAULT)
         self.accounts = BanksManager()
         self.db = StorageManager()
+        self.plugins = list()
 
         self.commands_map = {
             'update': {'cmd': self.updateTxsInDb,
@@ -21,6 +22,9 @@ class Me:
 
     def resetDbs(self):
         self.db.reset()
+
+    def update(self):
+        pass
 
     def updateTxsInDb(self):
         """
