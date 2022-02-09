@@ -14,8 +14,7 @@ Your data can be stored in different **storage locations** (non-exhaustive)
 
 - NAS
     - at your home
-    - at your friend’s home
-    - ... (can have different NAS if you want redundancy without using cloud providers)
+    - at your friend’s home ... (can have different NAS if you want redundancy without using cloud providers)
 - AWS
 - GCP
 - Azure
@@ -27,8 +26,7 @@ These **plugins** could be
 - me Photo (sync the photos you take)
     - From your phone
     - From a camera
-    - On your computer
-    - ...
+    - On your computer ...
 - me Drive (sync folders on your computers)
 - me-ssage
     - Message app that stores conversation on *me.*
@@ -47,22 +45,18 @@ These **plugins** could be
 - me Pay
     - Bank information stored in me would allow you to do this.
     - About transactions
-        
         Allow you to see your bank transaction from all banks and work with them
-        
         - Categorize
         - Aggregate
         - Check if that match your plans
-        - Do placement / risk prediction
-        - ...
+        - Do placement / risk prediction ...
 - Autofill tool that would fill information on formular websites
     - passwords
     - id information
         - Name
         - Phone
         - Age
-        - Gender
-        - ...
+        - Gender ...
     - living place
 - me Calendar
 - me Assistant
@@ -78,13 +72,9 @@ As you may have noticed, a lot of applications are copied from what google does.
 Also for a more technical part, this plugins are divided into 3 distincts categories.
 
 - DataSource
-    
-    Import data from anything to *me.*
-    
+    Import data from anything to *me.*    
 - Service
-    
     Programs / Apps that use your data
-    
 - Both (Service & DataSource)
 
 ### Data
