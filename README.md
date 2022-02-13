@@ -4,7 +4,7 @@ me. purpose is to let you choose where and how you store your data as well as wh
 
 ## Vision 
 
-me. want to allow you to store your data the way you want.
+me. wants to allow you to store your data the way you want.
 
 This data that you store allow you to run plugins developped by *me.* and the community.
 
@@ -34,13 +34,9 @@ These **plugins** could be
     - Mail app that stores mails on *me.*
 - Plugins for domotic purposes
     - Why would companies implement *me.* tools ?
-        
         In a world in which your data is stored in *me.* Then all your preferences would be in there. Some plugins would implement your life routines and so on .. All tools that you allow to access your data in order to run programs on it could offer you a personnalized exeperience without ever owning your data.
-        
 - Plugins to rent your data to others companies that implement tools based on IA.
-    
     You can see it as if you were paid for allowing google to access your location history
-    
 - Restaurant / Activity recommander
 - me Pay
     - Bank information stored in me would allow you to do this.
@@ -67,7 +63,7 @@ These **plugins** could be
     - Such as samsung Health
 - Detailed shopping information about what to buy to reach your weight goal related to what sport you pratice ...
 
-As you may have noticed, a lot of applications are copied from what google does. Actually that’s the goal. If we could have an open source tool that would centralize all tools based on your data such as what google does with a“central” point being *myself / me.* instead of google that would be perfect 🙂
+> As you may have noticed, a lot of applications are copied from what google does. Actually that’s the goal. If we could have an open source tool that would centralize all tools based on our data such as what google does with a “central” point being "*me.*" instead of google that would be good 🙂
 
 Also for a more technical part, this plugins are divided into 3 distincts categories.
 
@@ -99,7 +95,7 @@ This **data** could be (non-exhaustive)
 - Calendar
 - What you buy
 
-> You get the idea, every software you use today owning data on you that you would prefer have control on, can be rebuilt in an opensource way, where you choose how your data is stored.
+> You get the idea, every software you use today owning data about you that you would prefer have control on, can be rebuilt in an opensource way, where you choose how your data is stored.
 
 
 ## Installation instructions (tested on Windows 11 only)
