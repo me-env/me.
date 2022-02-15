@@ -1,11 +1,8 @@
-from me.logger import MeLogger, DEFAULT, DEBUG
-from me.plugins.banks_manager.bank_account.parser import TinkParser
-import logging
+from me.logger import MeLogger, DEFAULT
+from me.plugins.plugins.banking.banking.parser import TinkParser
 import requests
 import json
 import os
-import pandas as pd
-
 
 usages_cpd = {
     'rtxs': 'transactions:read',

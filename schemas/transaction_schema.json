@@ -11,7 +11,7 @@
       "tx_date",
       "timestamp",
       "refunded",
-      "refunded_double_checked",
+      "double_checked",
       "payment"
     ],
     "properties": {
@@ -54,7 +54,7 @@
         "bsonType": ["bool", "null"],
         "description": "must be bool or null and is required."
       },
-      "refunded_double_checked": {
+      "double_checked": {
         "bsonType": "bool",
         "description": "must be a bool and is required."
       },

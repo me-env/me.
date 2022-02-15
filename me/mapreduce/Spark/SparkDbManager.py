@@ -28,7 +28,7 @@ class SparkDbManager:
             StructField("tx_date", TimestampType(), nullable=False),
             StructField("timestamp", TimestampType(), nullable=False),
             StructField("refunded", BooleanType(), nullable=True),
-            StructField("refunded_double_checked", BooleanType(), nullable=False),
+            StructField("double_checked", BooleanType(), nullable=False),
             StructField("payment", BooleanType(), nullable=False)
         ])
 

@@ -4,7 +4,7 @@ from logger import MeLogger
 
 if __name__ == '__main__':
     aa = Me()
-    log = MeLogger()
+    log = MeLogger(name=__name__)
 
     while True:
         time.sleep(0.2)

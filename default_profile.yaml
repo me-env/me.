@@ -1,0 +1,5 @@
+PGHOST: 127.0.0.1
+PGUSER: me
+PGPASSWORD: changmeaswell
+PGDATABASE: me
+PGPORT: 5432

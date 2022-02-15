@@ -1,6 +1,7 @@
+from me.logger import MeLogger, DEBUG
+
 from abc import ABCMeta, abstractmethod
 from datetime import datetime
-
 import pandas as pd
 
 
@@ -12,6 +13,7 @@ class IParser(metaclass=ABCMeta):
 
 class TinkParser(IParser):
     def __init__(self):
+        self.log = MeLogger(name=__name__, level=DEBUG)
         self.parser = {
             "transaction_id": lambda x: x['id'],
             "transaction_name": lambda x: x['descriptions']['original'],
@@ -21,7 +23,7 @@ class TinkParser(IParser):
             "type": TinkParser.get_type,
             "tx_date": lambda x: datetime.strptime(x['dates']['booked'], '%Y-%m-%d'),
             "refunded": lambda x: False,
-            "refunded_double_checked": lambda x: False,
+            "double_checked": lambda x: False,
             "timestamp": lambda x: None,
             "payment": lambda x: True if x['amount']['value']['unscaledValue'][0] == '-' else False
         }
@@ -30,6 +32,7 @@ class TinkParser(IParser):
         return self.parser[item]
 
     def parse(self, data, columns):  # TODO, not happy with the way this works.
+        self.log.debug("data parsed", data)
         data = {c: list(map(lambda x: self[c](x), data)) for c in columns}
         data = pd.DataFrame(data, columns=columns).to_dict('records')
         return data

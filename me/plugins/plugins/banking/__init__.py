@@ -1,6 +1,6 @@
-from me.logger import MeLogger, DEBUG, DEFAULT
-from me.plugins.banks_manager.bank_account import BankAccountTink
-from me.IDataSource import IDataSource
+from me.logger import MeLogger, DEFAULT
+from me.plugins.plugins.banking.banking import BankAccountTink
+from me.plugins import IDataSource
 
 
 class PluginTink(IDataSource):

@@ -1,7 +1,7 @@
-from me.plugins.banks_manager import BanksManager
+from me.plugins.plugins.banking import BanksManager
 from me.storage import StorageManager
 from me.storage.datalist import Data
-from me.logger import MeLogger, DEBUG, DEFAULT
+from me.logger import MeLogger, DEFAULT
 
 
 class Me:

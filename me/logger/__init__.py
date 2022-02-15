@@ -31,7 +31,7 @@ def match_forced_levels(level):
 
 
 class MeLogger:
-    def __init__(self, level=DEFAULT, name='me', traceback_level=ERROR):
+    def __init__(self, level=DEFAULT, name='Me', traceback_level=ERROR):
         """
         logging encapsulation, allows to
         - easily set logging level for each class
@@ -41,8 +41,9 @@ class MeLogger:
         :param name: name of the logger, default is the name of the project
         :param traceback_level: TODO
         """
+        self._name = name
         self.logger = logging.getLogger(name)
-        if self.logger.hasHandlers() is False:
+        if not self.logger.hasHandlers():
             handler = logging.StreamHandler()
             formatter = logging.Formatter('%(levelname)s - %(asctime)s [%(name)s] %(message)s', datefmt='%y-%m-%d %H:%M:%S')
             handler.setFormatter(formatter)
@@ -63,6 +64,7 @@ class MeLogger:
 
     @match_forced_levels(DEBUG)
     def debug(self, *args, **kwargs):
+        # print("call debug with", self._name, MeLogger.merge(*args))
         self.logger.debug(MeLogger.merge(*args), **kwargs)
 
     def d(self, *args, **kwargs):

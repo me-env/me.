@@ -1,20 +1,22 @@
-from me.storage.mongodb.MongodbManager import MongodbManager
+from me.storage.mongodb import Mongodb
 from me.storage.datalist import Data
 from me.logger import MeLogger, DEBUG
+from me.storage.postgresql import PostgreSQL
 
 
 class StorageManager:
     def __init__(self):
         self.log = MeLogger(name=__name__)
         self.dbs = dict(
-            mongodb=MongodbManager()
+            mongodb=Mongodb(),
+            psql=PostgreSQL()
         )
         self.link_data_db = {
-            f'{Data.TXs.value}': 'mongodb'
+            f'{Data.TXs.value}': 'psql'
         }
 
     def getSchema(self, data_type):
-        check, convert = self.dbs[self.link_data_db[data_type.value]].getSchema(data_type)
+        check, convert = self.dbs[self.link_data_db[data_type.value]].getScheme(data_type)
         return [i for i in check], check, convert
 
     def addRow(self, data_type, data):
@@ -30,4 +32,3 @@ class StorageManager:
 
     def __applyOnDbManagers(self, fct):
         list(map(fct, self.dbs.values()))
-
