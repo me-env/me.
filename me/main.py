@@ -10,4 +10,4 @@ if __name__ == '__main__':
         time.sleep(0.2)
         log.flush()
         command = input('?> ')
-        aa.run(command)
+        aa.execute(command)

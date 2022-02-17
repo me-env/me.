@@ -1,5 +1,5 @@
 from me.logger import MeLogger, DEBUG
-from me.storage.IDatabase import IDatabase
+from me.storage.i_database import IDatabase
 from me.storage.postgresql.tables import type_to_table, type_to_schema, psql_to_python
 
 import os
@@ -62,6 +62,23 @@ class PostgreSQL(IDatabase):
             (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s) ON CONFLICT (transaction_id, account_id) DO NOTHING;;
         """, data)
         self.con.commit()
+
+    def getAllRows(self, data_type):
+        """
+        Add data 'data' in database (should be one a list of rows)
+        # TODO make this generic
+        # TODO check if the type are correctly formatted to be push
+        """
+        self.log.debug("get All rows in psql", __name__)
+        cur = self.con.cursor()
+        cur.execute("""
+            SELECT * FROM me_banking.transactions 
+            ;
+        """)
+        data = cur.fetchall()
+
+        self.log.debug("retrieved data", data)
+        return data
 
     def reset(self):
         """

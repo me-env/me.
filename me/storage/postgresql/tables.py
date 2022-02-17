@@ -1,11 +1,11 @@
-from me.storage import datalist
+from me.storage.data_config import DataType
 
 type_to_table = {
-    datalist.Data.TXs.value: 'transactions'
+    DataType.TXs.value: 'transactions'
 }
 
 type_to_schema = {
-    datalist.Data.TXs.value: 'me_banking'
+    DataType.TXs.value: 'me_banking'
 }
 
 

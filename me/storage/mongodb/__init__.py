@@ -1,7 +1,7 @@
-from me.storage.IDatabase import IDatabase
+from me.storage.i_database import IDatabase
 from me.storage.mongodb.collections.Transaction import Transaction
 from me.storage.mongodb.config import s00, db_name
-from me.storage.datalist import Data
+from me.storage.data_config import DataType
 from me.logger import *
 
 import pymongo
@@ -19,7 +19,7 @@ class Mongodb(IDatabase):
 
         self.log.i('dbs loaded:', self.dbs)
         self.collections = {
-            Data.TXs: Transaction(self.dbs['s00'])
+            DataType.TXs: Transaction(self.dbs['s00'])
         }
 
     def addRow(self, data_type, tx):
@@ -33,6 +33,9 @@ class Mongodb(IDatabase):
 
     def getScheme(self, data):
         return self.collections[data].schema_types
+
+    def getAllRows(self, data_type):
+        pass  # TODO
 
     def connect(self):
         self.log.info("Connect to", s00)

@@ -1,5 +1,5 @@
 from me.logger import MeLogger, DEFAULT
-from me.plugins.plugins.banking.banking.parser import TinkParser
+from me.plugins.plugins.me_banking.datasource.parser import TinkParser
 import requests
 import json
 import os

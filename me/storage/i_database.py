@@ -15,6 +15,11 @@ class IDatabase(ABC):
         """
 
     @abstractmethod
+    def getAllRows(self, data_type):
+        """
+        """
+
+    @abstractmethod
     def reset(self):
         """
         Reset database content
